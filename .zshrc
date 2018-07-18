@@ -1,32 +1,20 @@
-#
-# Aliases
-#
-# Command Line Utilities
-alias t1="tree -L 1 -d"
-alias t2="tree -L 2 -d"
-alias t3="tree -L 3 -d"
-alias t2l="tree -L 2 | less"
-alias t3l="tree -L 3 | less"
-
-alias editzsh="vim ~/.zshrc"
-alias psyu="sudo pacman -Syu"
-alias rbn="sudo reboot now"
-alias sdn="sudo shutdown now"
-alias x="startx"
-
-#Paths
-alias map="cd ~/base/maggie/railsapp/maggie"
-alias shn="cd ~/base/dojo/rails/shine"
-
-
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/mpv/.oh-my-zsh
+  export ZSH=/home/mpv/.oh-my-zsh
 
-# Theme
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="dieter"
-ZSH_THEME="dallas"
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -35,6 +23,15 @@ ZSH_THEME="dallas"
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
@@ -42,34 +39,37 @@ ZSH_THEME="dallas"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode git rails)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+ vi-mode git rails gem python pip
+)
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/.profile
 # User configuration
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -83,6 +83,45 @@ export LC_CTYPE=en_US.UTF-8
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#
+# ALIASES
+#
+
+#
+# Sys Admin
+#
+# Update
+alias psyu="sudo pacman -Syu"
+
+# Ripley on Rails home directory
+alias most="cd ~/sgw/projects/Ripley/"
+# SGW Intranet Directory
+alias int="cd ~/sgw/intranet/wwwroot"
+
+# Host curent directory with Python
+alias ph="python -m http.server"
+
+# Edit .zshrc
+alias zshset="vim ~/.zshrc"
+
+# Edit i3 settings
+alias i3set="vim ~/.config/i3/config"
+
+# XRANDR Aliases
+alias edpoff="xrandr --output eDP-1 --off"
+
+# Disable Trackpad
+alias tpoff="/usr/bin/synclient Touchpadoff=1"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
